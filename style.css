@@ -142,3 +142,20 @@ body{
     width: 100%;
 }
 
+.box-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.box-footer p{
+    font-size: 1.2em;
+    color: #5C2C25; /* Color marrón similar al de la imagen */
+}
+
+.box-footer a{
+    font-size: 1.2em;
+    color: #5C2C25; /* Color marrón similar al de la imagen */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}

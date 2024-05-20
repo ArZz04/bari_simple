@@ -3,7 +3,8 @@ const CACHE_URLS = [
     'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/PANTALLA-RES.mp4',
     'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/VIDEO-POLLO.mp4',
     'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/LOGO_IMPERIAL.mp4',
-    'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/VIDEO_MARISCO.mp4'
+    'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/VIDEO_MARISCO.mp4',
+    'https://storage.googleapis.com/bari-cloud/valle-imperial/videos/VIDEO-CERDO.mp4'
 ];
 
 // Install event - precache the videos

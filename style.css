@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
 
+/* Definir fuente local */
 @font-face {
     font-family: 'Freeman-Regular';
-    /* src: url('/public/fonts/Freeman-Regular.ttf') format('truetype'); */
+    src: url('/public/fonts/Freeman-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

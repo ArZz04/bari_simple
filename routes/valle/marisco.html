@@ -12,5 +12,16 @@
         <source src="https://storage.googleapis.com/bari-cloud/parques-tesistan/videos/VIDEO_MARISCO.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de videos.
     </video>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('../../js/serviceWorker.js')
+                    .then(reg => console.log('Service Worker Registered'))
+                    .catch(err => console.log(`Service Worker Error: ${err}`));
+            });
+        }
+    </script>
 </body>
 </html>

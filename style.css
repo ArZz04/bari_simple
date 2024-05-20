@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Freeman-Regular';
+    src: url('/public/fonts/Freeman-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 50px 100px 75px;
+    background: rgb(237,237,237);
+    background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(235,234,234,1) 100%, rgba(232,230,230,1) 100%, rgba(223,219,218,1) 100%, rgba(197,186,184,1) 100%, rgba(200,190,188,1) 100%, rgba(148,124,121,1) 100%, rgba(125,95,91,1) 100%, rgba(62,15,9,1) 100%);
+    font-family: 'Freeman-Regular', Arial, sans-serif;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 250px;
+    margin-right: 20px;
+}
+
+.toggle-sucursal {
+    width: 200px;
+    text-align: center;
+    font-family: 'Freeman-Regular', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #3E0F09; /* Color marrón similar al de la imagen */
+}
+
+.toggle-sucursal p {
+    margin: 0;
+    text-decoration: none;
+    color: inherit; /* Para que tome el color del contenedor padre */
+    display: block;
+}
+.selected {
+    font-size: 1.4em;
+    transition: all 0.2s ease-in-out;
+}
+
+.toggle-sucursal p:hover {
+    cursor: pointer; /* Color marrón similar al de la imagen */
+
+}
+
+.line {
+    width: 90%;
+    height: 3px;
+    background-color: #3E0F09; /* Color marrón similar al de la imagen */
+    margin: auto; /* Centra la línea horizontalmente */
+}
+
+/* Path: index.html */
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container h1 {
+    font-size: 2.5em;
+    font-family: 'Freeman-Regular', Arial, sans-serif;
+    color: #5C2C25; /* Color marrón similar al de la imagen */
+}
+
+.section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-boxes {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    font-family: 'Freeman-Regular', Arial, sans-serif;
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+.button-box {
+    border-radius: 10px;
+    font-size: 1.5em;
+    background: rgb(62,15,9);
+    background: linear-gradient(280deg, rgba(62,15,9,0) 0%, rgba(231,231,231,1) 100%);
+    margin: 10px 0;
+    padding: 0;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    overflow: hidden; /* Asegura que el contenido no desborde el borde redondeado */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.button-box a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 25px;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    width: 100%;
+    height: 100%;
+}
+
+.button-box p{
+    color: #745b5b;
+}
+
+
+.button-box:hover, .button-box.selected {
+    background-color: #745b5b; /* Fondo marrón oscuro */
+    color: #F8E3C1; /* Color beige claro */
+    cursor: pointer;
+}
+
+.button-box img{
+    width: 3em;
+    margin-right: 10px;
+}
+
+.button-box a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hace que los enlaces hereden el color del contenedor */
+    display: flex;
+    align-items: center;
+}
+
+.box-preview{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-preview{
+    width: 100%;
+}
+

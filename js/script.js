@@ -53,7 +53,7 @@ function generateButtonSection(sucursal, baseUrl) {
       </ul>
     </section>
     <section class="box-preview">
-      <img class="img-preview" src="${sucursal === 'parques' ? 'https://t3.ftcdn.net/jpg/05/85/86/44/360_F_585864419_kgIYUcDQ0yiLOCo1aRjeu7kRxndcoitz.jpg' : 'https://wallpapers-clan.com/wp-content/uploads/2023/11/cool-vaporwave-art-desktop-wallpaper-preview.jpg'}" alt="">
+      <img class="img-preview" src="${sucursal === 'parques' ? 'https://storage.googleapis.com/bari-cloud/parques-tesistan/images/debarit08.png' : 'https://storage.googleapis.com/bari-cloud/valle-imperial/images/debari2.png'}" alt="">
     </section>
   `;
 }

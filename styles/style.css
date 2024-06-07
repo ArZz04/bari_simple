@@ -11,7 +11,7 @@
 body{
     margin: 50px 100px 75px;
     background: rgb(237,237,237);
-    background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(235,234,234,1) 100%, rgba(232,230,230,1) 100%, rgba(223,219,218,1) 100%, rgba(197,186,184,1) 100%, rgba(200,190,188,1) 100%, rgba(148,124,121,1) 100%, rgba(125,95,91,1) 100%, rgba(62,15,9,1) 100%);
+    background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(235,234,234,1) 100%, rgba(232,230,230,1) 100%, rgba(223,219,218,1) 100%, rgba(197,186,184,1) 100%, rgba(200,190,188,1) 100%, rgb(208, 159, 153) 100%, rgba(125,95,91,1) 100%, rgba(62,15,9,1) 100%);
     font-family: 'Freeman-Regular', Arial, sans-serif;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 .logo {
-    width: 250px;
+    width: 350px;
     margin-right: 20px;
 }
 
@@ -32,7 +32,7 @@ body{
     font-family: 'Freeman-Regular', Arial, sans-serif;
     font-weight: bold;
     font-size: 1.1em;
-    color: #3E0F09; /* Color marrón similar al de la imagen */
+    color: #FF0000; /* Color marrón similar al de la imagen */
 }
 
 .toggle-sucursal p {
@@ -54,7 +54,7 @@ body{
 .line {
     width: 90%;
     height: 3px;
-    background-color: #3E0F09; /* Color marrón similar al de la imagen */
+    background-color: #FF0000; /* Color marrón similar al de la imagen */
     margin: auto; /* Centra la línea horizontalmente */
 }
 
@@ -71,7 +71,7 @@ body{
 .container h1 {
     font-size: 2.5em;
     font-family: 'Freeman-Regular', Arial, sans-serif;
-    color: #5C2C25; /* Color marrón similar al de la imagen */
+    color: black; /* Color marrón similar al de la imagen */
 }
 
 .section-container{
@@ -94,7 +94,7 @@ body{
     border-radius: 10px;
     font-size: 1.5em;
     background: rgb(62,15,9);
-    background: linear-gradient(280deg, rgba(62,15,9,0) 0%, rgba(231,231,231,1) 100%);
+    background: linear-gradient(280deg, rgba(193, 23, 0, 0) 0%, rgba(231,231,231,1) 100%);
     margin: 10px 0;
     padding: 0;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -113,12 +113,24 @@ body{
 }
 
 .button-box p{
-    color: #745b5b;
+    color: black;
 }
 
+.box-letter {
+    display: inline-block;
+}
+
+.letter {
+    color: red !important
+}
+
+h1 {
+    display: inline; /* Cambiar a inline */
+    margin: 0; /* Remover márgenes adicionales */
+}
 
 .button-box:hover, .button-box.selected {
-    background-color: #745b5b; /* Fondo marrón oscuro */
+    background-color: #ffa9a9; /* Fondo marrón oscuro */
     color: #F8E3C1; /* Color beige claro */
     cursor: pointer;
 }
@@ -152,13 +164,8 @@ body{
     margin-top: 10px;
 }
 
-.box-footer p{
-    font-size: 1.2em;
-    color: #5C2C25; /* Color marrón similar al de la imagen */
-}
-
 .box-footer a{
     font-size: 1.2em;
-    color: #5C2C25; /* Color marrón similar al de la imagen */
+    color: #047e1e; /* Color marrón similar al de la imagen */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
 }

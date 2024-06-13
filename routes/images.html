@@ -8,7 +8,53 @@
     <title>IMAGENES</title>
 </head>
 <body class="main">
-    <img id="imageSrc" class="img-src" src="" alt="Imagen">
-    <script src="script.js"></script>
+    
+    <script type="module">
+        import data from "./data.json" with { type: "json" };
+
+        const container = document.querySelector(".main");
+
+        const rcsScreen = data["IMAGES"]["RESOURCES"];
+        var resources = [];
+
+        for (const i in rcsScreen){
+            resources.push(rcsScreen[i]);
+        }
+
+        // console.log(resources); // {ID: '0', TIPO: 'IMAGEN', NOMBRE: 'PRECIOS-RES', URL: '/public/images/publicidad/PRECIOS-RES.png', DURACION: '10'}
+
+        const showResources = (resources, index = 0, isFirst = true) => {
+            if (resources.length === 0) return; // Si la lista de recursos está vacía, no hacer nada
+            
+            const resource = resources[index];
+            
+            console.log('Comienza');
+            const showResource = () => {
+                if (resource.TIPO === "IMAGEN") {
+                    container.innerHTML = `
+                        <image-resource name="${resource["NOMBRE"]}" path="${resource["URL"]}"></image-resource>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <video-resource name="${resource["NOMBRE"]}" path="${resource["URL"]}"></video-resource>
+                    `;
+                }
+
+                // Llamar a la misma función para el siguiente recurso
+                showResources(resources, (index + 1) % resources.length, false);
+            };
+
+            if (isFirst) {
+                showResource(); // Mostrar el primer recurso de inmediato
+            } else {
+                setTimeout(showResource, resource['DURACION']); // Mostrar los recursos subsiguientes después de su duración
+            }
+        };
+
+    // Iniciar el proceso con el primer recurso
+    showResources(resources);
+        
+    </script>
+    <script src="elements.js"></script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./routes.css">
+        <title>IMAGENES</title>
+    </head>
+    <body>
+
+        <div class="w3-content w3-section" style="width:100%">
+            <img class="slides animate-top principal"
+                src="/public/images/publicidad/PRECIOS-RES.png"
+                style="width:100%">
+            <img class="slides animate-bottom"
+                src="/public/images/publicidad/RANCHO1.JPG" style="width:100%">
+            <img class="slides animate-top"
+                src="/public/images/publicidad/RANCHO2.JPG" style="width:100%">
+            <img class="slides animate-bottom"
+                src="/public/images/publicidad/RANCHO3.JPG" style="width:100%">
+            <img class="slides animate-top"
+                src="/public/images/publicidad/RANCHO4.JPG" style="width:100%">
+            <img class="slides animate-bottom"
+                src="/public/images/publicidad/RANCHO5.JPG" style="width:100%">
+            <video class="slides animate-top video" style="width:100%" src="/public/videos/SHE-NOSOTROS.mp4" autoplay>
+        </div>
+
+        <script>
+            var myIndex = 0;
+            carousel();
+    
+            function carousel() {
+                var slides = document.getElementsByClassName("slides");
+                var currentSlide = slides[myIndex];
+    
+                // Ocultar todos los slides y pausar los videos
+                for (var i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                    if (slides[i].tagName === "VIDEO") {
+                        slides[i].pause();
+                        slides[i].currentTime = 0; // Reiniciar el video
+                    }
+                }
+    
+                // Mostrar el slide actual
+                currentSlide.style.display = "block";
+    
+                // Determinar el tiempo de espera según la clase del slide actual
+                var delay = currentSlide.classList.contains("principal") ? 10000 : 5000;
+    
+                // Si es un video, manejar el cambio de slide al finalizar el video y reproducirlo
+                if (currentSlide.classList.contains("video")) {
+                    var video = currentSlide;
+                    video.play();
+                    video.removeEventListener("ended", onVideoEnded);
+                    video.addEventListener("ended", onVideoEnded);
+                } else {
+                    // Si no es un video, simplemente avanzar al siguiente slide después del tiempo de delay
+                    setTimeout(nextSlide, delay);
+                }
+            }
+    
+            function nextSlide() {
+                var slides = document.getElementsByClassName("slides");
+                myIndex++;
+                if (myIndex >= slides.length) {
+                    myIndex = 0;
+                }
+                carousel(); // Llamar a la función de nuevo para avanzar al siguiente slide
+            }
+    
+            function onVideoEnded() {
+                nextSlide();
+            }
+        </script>
+
+    </body>
+</html>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./routes.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>IMAGENES</title>
 </head>
 <body class="main">
@@ -21,38 +22,47 @@
             resources.push(rcsScreen[i]);
         }
 
-        // console.log(resources); // {ID: '0', TIPO: 'IMAGEN', NOMBRE: 'PRECIOS-RES', URL: '/public/images/publicidad/PRECIOS-RES.png', DURACION: '10'}
-
-        const showResources = (resources, index = 0, isFirst = true) => {
+        const showResources = (resources, index = 0) => {
             if (resources.length === 0) return; // Si la lista de recursos está vacía, no hacer nada
             
             const resource = resources[index];
-            
-            console.log('Comienza');
+
             const showResource = () => {
-                if (resource.TIPO === "IMAGEN") {
-                    container.innerHTML = `
-                        <image-resource name="${resource["NOMBRE"]}" path="${resource["URL"]}"></image-resource>
-                    `;
-                } else {
-                    container.innerHTML = `
-                        <video-resource name="${resource["NOMBRE"]}" path="${resource["URL"]}"></video-resource>
-                    `;
+                const existingElement = container.querySelector('.active');
+                if (existingElement) {
+                    existingElement.classList.remove('active');
                 }
 
-                // Llamar a la misma función para el siguiente recurso
-                showResources(resources, (index + 1) % resources.length, false);
+                let newElement;
+                if (resource.TIPO === "IMAGEN") {
+                    newElement = document.createElement('image-resource');
+                } else {
+                    newElement = document.createElement('video-resource');
+                }
+
+                newElement.setAttribute('name', resource["NOMBRE"]);
+                newElement.setAttribute('path', resource["URL"]);
+                newElement.classList.add('active');
+
+                container.appendChild(newElement);
+
+                if (existingElement) {
+                    setTimeout(() => {
+                        container.removeChild(existingElement);
+                    }, 1000); // Duración de la transición en milisegundos
+                }
+
+                // Llamar a la misma función para el siguiente recurso después de la duración
+                setTimeout(() => {
+                    showResources(resources, (index + 1) % resources.length);
+                }, resource['DURACION']);
             };
 
-            if (isFirst) {
-                showResource(); // Mostrar el primer recurso de inmediato
-            } else {
-                setTimeout(showResource, resource['DURACION']); // Mostrar los recursos subsiguientes después de su duración
-            }
+            showResource();
         };
 
-    // Iniciar el proceso con el primer recurso
-    showResources(resources);
+        // Iniciar el proceso con el primer recurso
+        showResources(resources);
         
     </script>
     <script src="elements.js"></script>
